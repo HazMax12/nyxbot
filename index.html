@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nyx — The Best New Discord Bot</title>
+  <meta name="description" content="Nyx — fast moderation, engagement, and utilities for Discord. Clean, shadowy black and blue theme." />
+  <style>
+    :root{--bg:#05060a;--panel:#071428;--accent:#0ea5ff;--accent-2:#235fa8;--muted:#9fbcd8}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6f7ff;background:radial-gradient(1200px 400px at 10% 10%, rgba(14,165,255,0.06), transparent 6%), radial-gradient(800px 300px at 90% 90%, rgba(35,95,168,0.03), transparent 8%), var(--bg);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    .wrap{max-width:1000px;margin:48px auto;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:40px;box-shadow:0 18px 60px rgba(2,6,23,0.7);border:1px solid rgba(14,165,255,0.06);position:relative;text-align:center}
+
+    header{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:24px}
+    .logo{width:80px;height:80px;border-radius:12px;background:linear-gradient(135deg,#021b2f 0%,#042033 60%);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:800;font-size:28px;box-shadow:0 10px 40px rgba(14,165,255,0.1) inset}
+    h1{margin:10px 0 0;font-size:40px;line-height:1;color:#e9f9ff;text-shadow:0 8px 36px rgba(14,165,255,0.06)}
+    .subtitle{color:var(--muted);margin-top:8px;font-size:18px}
+
+    .lead{font-size:17px;color:var(--muted);margin-top:20px;max-width:700px;margin-left:auto;margin-right:auto}
+    .bullets{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+    .pill{background:linear-gradient(90deg,rgba(14,165,255,0.1),rgba(35,95,168,0.06));padding:10px 16px;border-radius:999px;color:var(--accent);font-weight:700;font-size:14px}
+
+    .ctas{display:flex;justify-content:center;gap:16px;margin-top:32px}
+    .btn{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#021022;padding:14px 22px;border-radius:12px;border:none;font-weight:800;cursor:pointer;box-shadow:0 18px 50px rgba(14,165,255,0.2);transition:transform .12s ease,box-shadow .12s ease;font-size:16px}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(14,165,255,0.2);backdrop-filter:blur(6px)}
+    .btn:hover{transform:translateY(-2px)}
+    .btn:active{transform:translateY(0)}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:40px;text-align:left}
+    .feature{padding:20px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.05)}
+    .feature h3{margin:0 0 8px;color:#e9f9ff;font-size:18px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
+
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;z-index:60;opacity:0;pointer-events:none;transition:opacity .18s ease}
+    .modal-backdrop.show{opacity:1;pointer-events:auto}
+    .modal{width:460px;max-width:100%;background:var(--panel);padding:24px;border-radius:12px;border:1px solid rgba(14,165,255,0.08);box-shadow:0 30px 90px rgba(2,6,23,0.9)}
+    .modal.show{opacity:1;pointer-events:auto}
+    input[type=email]{width:100%;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:#021026;color:#cfe8ff;margin-top:14px}
+
+    @media (max-width:560px){.logo{width:60px;height:60px}.btn{font-size:14px;padding:12px 18px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="logo">Nyx</div>
+        <h1>Nyx — The new best Discord bot</h1>
+        <div class="subtitle">Powerful moderation. Active engagement. Simple setup.</div>
+      </header>
+
+      <div class="lead">Nyx is designed to elevate your Discord community. From automated moderation to smart engagement tools, Nyx gives you control and style in one lightweight package.</div>
+
+      <div class="bullets">
+        <span class="pill">Fast setup</span>
+        <span class="pill">99.9% uptime</span>
+        <span class="pill">One-click invite</span>
+        <span class="pill">24/7 Support</span>
+      </div>
+
+      <div class="ctas">
+        <button class="btn" id="buyNow">Buy Now • $9.99</button>
+        <a class="btn secondary" id="inviteLink" href="#">Invite Nyx</a>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Auto Moderation</h3>
+          <p>Smart filters, instant actions, and an adaptive strike system.</p>
+        </div>
+        <div class="feature">
+          <h3>Engagement</h3>
+          <p>Reaction roles, giveaways, levels, and rewards built in.</p>
+        </div>
+        <div class="feature">
+          <h3>Audit Logs</h3>
+          <p>Complete transparency with exportable server logs.</p>
+        </div>
+        <div class="feature">
+          <h3>Dashboard</h3>
+          <p>Modern web dashboard for configuration without coding.</p>
+        </div>
+        <div class="feature">
+          <h3>Security</h3>
+          <p>Role management and anti-spam protections.</p>
+        </div>
+        <div class="feature">
+          <h3>Performance</h3>
+          <p>Runs 40% faster than legacy Discord bots.</p>
+        </div>
+      </div>
+
+      <footer>
+        Nyx • Built for communities • Contact <a href="mailto:hello@nyxbot.example" style="color:var(--accent);text-decoration:none">hello@nyxbot.example</a>
+      </footer>
+    </div>
+  </div>
+
+  <div id="backdrop" class="modal-backdrop">
+    <div class="modal">
+      <h3 style="margin:0 0 6px;color:#eaf6ff">Buy Nyx — $9.99</h3>
+      <p style="margin:0;color:var(--muted)">Enter email to receive your license key and setup guide. You’ll be redirected to payment.</p>
+      <input id="email" type="email" placeholder="you@domain.com" required />
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px">
+        <button class="btn secondary" id="cancel">Cancel</button>
+        <button class="btn" id="proceed">Proceed to Payment</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const INVITE_URL = 'https://discord.com/oauth2/authorize?client_id=1428413003119853702&permissions=8&integration_type=0&scope=bot';
+    const PAYMENT_LINK = 'https://buy.stripe.com/00w28s6Lm2Hx6VBg6a04801'; // Replace with your real Stripe link
+
+    document.getElementById('inviteLink').href = INVITE_URL;
+
+    const backdrop = document.getElementById('backdrop');
+    const buyNow = document.getElementById('buyNow');
+    const cancel = document.getElementById('cancel');
+    const proceed = document.getElementById('proceed');
+    const emailInput = document.getElementById('email');
+
+    function showModal(){backdrop.classList.add('show');backdrop.style.opacity='1';}
+    function hideModal(){backdrop.classList.remove('show');backdrop.style.opacity='0';}
+
+    buyNow.addEventListener('click', ()=>{showModal();emailInput.focus();});
+    cancel.addEventListener('click', hideModal);
+
+    proceed.addEventListener('click', ()=>{
+      const email = emailInput.value.trim();
+      if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        emailInput.focus();
+        emailInput.style.outline='2px solid rgba(14,165,255,0.4)';
+        setTimeout(()=>emailInput.style.outline='none',1200);
+        return;
+      }
+      try{localStorage.setItem('nyx_buyer_email', email);}catch(e){}
+      window.location.href = PAYMENT_LINK + '?prefilled_email=' + encodeURIComponent(email);
+    });
+
+    backdrop.addEventListener('click', e=>{if(e.target===backdrop) hideModal();});
+  </script>
+</body>
+</html>
